@@ -1,0 +1,23 @@
+variables:
+  - name: project_name
+    prompt: "Project name"
+    default_value: "{{ folder_name | capitalize }}"
+
+  - name: package_name
+    prompt: "Package name (kebab-case)"
+    default_value: "{{ project_name | kebab }}"
+
+  - name: description
+    prompt: "Short description"
+    default_value: "A React + PandaCSS app"
+
+  - name: author_name
+    prompt: "Author"
+    default_value: '{{ git_cfg "user.name" | default (env_var "USERNAME") }}'
+
+ignores:
+  - .git
+  - node_modules
+  - dist*
+  - styled-system
+use_template_dir: false
