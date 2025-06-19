@@ -5,8 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"prepare": "panda codegen",
-		"dev": "vite --clearScreen false",
-		"dev-all": "bunx concurrently -k -n \"css,vite\" -c \"magenta,cyan\" \"bun panda --watch\" \"vite --clearScreen false\"",
+		"dev": "concurrently -k -n \"css,vite\" -c \"magenta,cyan\" \"panda --watch\" \"vite --clearScreen false\"",
 		"lint": "biome check"
 	},
 	"dependencies": {
@@ -20,6 +19,7 @@
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
 		"@vitejs/plugin-react-swc": "^3.9.0",
+		"concurrently": "^9.1.2",
 		"postcss": "^8.5.6",
 		"typescript": "^5.8.3",
 		"vite": "^6.3.5",
