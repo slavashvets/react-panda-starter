@@ -1,0 +1,5 @@
+apply_args:
+  - --variables
+  - project_name=MyApp
+  - --variables
+  - author_name=Slava

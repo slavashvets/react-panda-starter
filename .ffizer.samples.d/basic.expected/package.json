@@ -1,0 +1,30 @@
+{
+  "name": "my-app",
+	"private": true,
+	"version": "0.1.0",
+  "description": "A React + PandaCSS app",
+  "author": "Slava",
+	"type": "module",
+	"scripts": {
+		"prepare": "panda codegen",
+		"dev": "concurrently -k -n \"css,vite\" -c \"magenta,cyan\" \"panda --watch\" \"vite --clearScreen false\"",
+		"lint": "biome check"
+	},
+	"dependencies": {
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.0",
+		"@pandacss/dev": "^0.54.0",
+		"@pandacss/postcss": "^0.54.0",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"@vitejs/plugin-react-swc": "^3.9.0",
+		"concurrently": "^9.1.2",
+		"postcss": "^8.5.6",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
+}

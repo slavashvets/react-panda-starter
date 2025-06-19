@@ -1,0 +1,29 @@
+version: "3"
+
+tasks:
+  ensure-bun:
+    desc: Ensure Bun is installed
+    cmds:
+      - >
+        if ! command -v bun &> /dev/null; then
+          echo 'Install Bun → https://bun.sh/'; exit 1;
+        fi
+    silent: true
+
+  ensure-lefthook:
+    desc: Ensure Lefthook is installed
+    cmds:
+      - >
+        if ! command -v lefthook &> /dev/null; then
+          echo 'Install Lefthook → https://lefthook.dev/installation/index.html'; exit 1;
+        fi
+    silent: true
+
+  "*":
+    deps:
+      - ensure-bun
+      - ensure-lefthook
+    silent: true
+    desc: "Run a command from the package.json scripts (dev, build, lint, etc.)"
+    cmds:
+      - bun run {{ index .MATCH 0 }} {{.CLI_ARGS}}
