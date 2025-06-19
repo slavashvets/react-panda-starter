@@ -1,0 +1,8 @@
+version: "3"
+
+tasks:
+  "*":
+    silent: true
+    desc: "Run a command from the package.json scripts"
+    cmds:
+      - bun run {{ index .MATCH 0 }} {{.CLI_ARGS}}
