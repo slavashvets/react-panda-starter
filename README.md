@@ -11,7 +11,7 @@ cd my-new-project
 git init
 
 # apply the template to the current folder
-ffizer apply --source https://path/to/repo.git --destination .
+ffizer apply --source https://github.com/slavashvets/react-panda-starter --rev main --destination .
 
 # run the development stack
 task dev
